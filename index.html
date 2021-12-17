@@ -1,0 +1,66 @@
+<html>
+<body>
+
+<h2>Hi, I am Acharya</h2>
+
+
+
+<p id="v">Estimation for Idly:</p>
+<input id="count" type="text" name="Idly">
+
+
+
+<button type="button" onclick="myFunction()">Calculate</button>
+<p id="mp1" style="display:none">  "Req Minapapappu is" </p>
+<p id="mp" style="display:block"> </p>  
+<p id="mp2" style="display:none">  "Req Idly Ravva is" </p>
+<p id="mp3" style="display:block"> </p>  
+<p id="mp4" style="display:none">  "Req Palukulu is" </p>
+<p id="mp5" style="display:block"> </p>  
+<script>
+var urad_fact=1.2;
+var irava_fact=3.6;
+var palukulu_fact=0.6;
+var cty_pappu_fact=1.2;
+var toor_fact=1.2;
+var maida_fact=1.2;
+var aata_fact=1.2;
+var upravva_fact=1.2;
+var sangapindi_fact=1.2;
+var sanagapappu_fact=1.2;
+var sambar_pow_fact=1.2;
+var potato_fact=1.2;
+var urad_fact=1.2;
+var urad_fact=1.2;
+
+	
+	
+	
+	
+	
+function myFunction() {
+  // Get the value of the input field with id="numb"
+  let x = document.getElementById("count").value;
+  // If x is Not a Number or less than one or greater than 10
+ 
+  if (isNaN(x)) {
+    ans = "Input not valid";
+  } else {
+    ans = Math.round(x * urad_fact) ;
+	ans1 = Math.round(x * irava_fact);
+	ans2 = Math.round(x * palukulu_fact)
+  }
+  document.getElementById("mp").innerHTML = ans + "gm";
+  document.getElementById("mp1").style.display='block';
+  document.getElementById("mp3").innerHTML = ans1 + "gm";
+  document.getElementById("mp2").style.display='block';
+  document.getElementById("mp5").innerHTML = ans2 + "gm";
+  document.getElementById("mp4").style.display='block';
+}
+</script>
+
+
+
+
+</body>
+</html> 
