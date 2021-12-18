@@ -5,7 +5,7 @@
 <style>
 .block {
   display: block;
-  width: 100%;
+  max-width: 100%;
   border: none;
   background-color: #988ff7;
   color: white;
@@ -22,7 +22,7 @@
 .table {
   font-family: Arial, Helvetica, sans-serif;
  
-  width: 100px;
+  max-width: 100%;
 }
 
 .table1 td, table th {
@@ -43,9 +43,7 @@
 }
 </style>
 </head>
-<h2 font-family: Georgia, serif;
-  font-size: 60px;
-  color: white;>Aacharya ! Your Estimation Master </h2>
+<h2>Hi, I am Acharya</h2>
 
 
 <center>
@@ -216,6 +214,7 @@ function myFunction() {
   }
   else
   {
+  document.getElementById("error").style.display="none";
   if(x!=0 ) {
     ans = Math.round(x * idly_urad_fact) ;
 	ans1 = Math.round(x * idly_irava_fact);
