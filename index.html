@@ -1,35 +1,198 @@
 <html>
 <body>
+<head>
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.block {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: #988ff7;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
 
-<h2>Hi, I am Acharya</h2>
+.block:hover {
+  background-color:#befaf5 ;
+  color: black;
+}
+.table {
+  font-family: Arial, Helvetica, sans-serif;
+ 
+  width: 100px;
+}
+
+.table1 td, table th {
+  border: 1px solid #988ff7;
+  padding: 8px;
+}
+
+.table tr:nth-child(even){background-color: #f2f2f2;}
+
+.table tr:hover {background-color: #ddd;}
+
+.table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+</head>
+<h2 font-family: Georgia, serif;
+  font-size: 60px;
+  color: white;>Aacharya ! Your Estimation Master </h2>
 
 
-
-<p id="v">Estimation for Idly:</p>
+<center>
+<p id="error" style="color:red; font-size:25px"></p>
+<p id="v" class="block">Estimation for 🍴
 <input id="count" type="text" name="Idly">
+<button type="button" id="idly" onclick="myFunction()">Idly</button>
+</p>
+<table style="display:none" class="table" id="table1" >
+  <tr>
+    <th>Item</th>
+    <th>Quantity</th>
+    <th>Rate</th>
+  </tr>
+  <tr>
+    <td>Minapapappu</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Idly Ravva</td>
+    <td></td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>Palli</td>
+    <td></td>
+    <td></td>
+  </tr>
+<table> 
+<p id="v" class="block">Estimation for 🍴
+<input id="vcount" type="text" name="vada">
+<button type="button"  onclick="myFunction()">Vada</button>
+</p>
+<table style="display:none" class="table" id="table2" >
+  <tr>
+    <th>Item</th>
+    <th>Quantity</th>
+    <th>Rate</th>
+  </tr>
+  <tr>
+    <td>Minapapappu</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Ration Rice</td>
+    <td></td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>Palli</td>
+    <td></td>
+    <td></td>
+  </tr>
+<table>
+<p id="v" class="block">Estimation for 🍴
+<input id="dcount" type="text" name="dosa">
+<button type="button"  onclick="myFunction()">Dosa</button>
+</p>
+<table style="display:none" class="table" id="table3" >
+  <tr>
+    <th>Item</th>
+    <th>Quantity</th>
+    <th>Rate</th>
+  </tr>
+  <tr>
+    <td>Minapapappu</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Ration Rice</td>
+    <td></td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>Palli</td>
+    <td></td>
+    <td></td>
+  </tr>
+<table>
 
+<p id="v" class="block">Estimation for 🍴
+<input id="pcount" type="text" name="puri">
+<button type="button"  onclick="myFunction()">Puri</button>
+</p>
+<table style="display:none" class="table" id="table4" >
+  <tr>
+    <th>Item</th>
+    <th>Quantity</th>
+    <th>Rate</th>
+  </tr>
+  <tr>
+    <td>Aaata</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Maida</td>
+    <td></td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>Potatao</td>
+    <td></td>
+    <td></td>
+  </tr>
+<table>
 
-
-<button type="button" onclick="myFunction()">Calculate</button>
-<p id="mp1" style="display:none">  "Req Minapapappu is" </p>
-<p id="mp" style="display:block"> </p>  
-<p id="mp2" style="display:none">  "Req Idly Ravva is" </p>
-<p id="mp3" style="display:block"> </p>  
-<p id="mp4" style="display:none">  "Req Palukulu is" </p>
-<p id="mp5" style="display:block"> </p>  
+<p id="v" class="block">Estimation for 🍴
+<input id="ucount" type="text" name="Upma">
+<button type="button"  onclick="myFunction()">Upma</button>
+</p>
+<table style="display:none" class="table" id="table5" >
+  <tr>
+    <th>Item</th>
+    <th>Quantity</th>
+    <th>Rate</th>
+  </tr>
+  <tr>
+    <td>Upma Ravva</td>
+    <td></td>
+    <td></td>
+  </tr>
+<table>
+</center>
 <script>
-var urad_fact=1.2;
-var irava_fact=3.6;
-var palukulu_fact=0.6;
+var idly_urad_fact=1.2;
+var idly_irava_fact=3.6;
+var idly_palukulu_fact=0.6;
+var vada_urad_fact=4;
+var vada_palukulu_fact=0.6;
+var vada_rice_fact=10;
+var dosa_urad_fact=3;
+var dosa_palukulu_fact=0.6;
+var dosa_rice_fact=10;
 var cty_pappu_fact=1.2;
 var toor_fact=1.2;
-var maida_fact=1.2;
-var aata_fact=1.2;
-var upravva_fact=1.2;
+var puri_maida_fact=1.2;
+var puri_aata_fact=1.2;
+var puri_potato_fact=1.2;
+var upma_upravva_fact=1.2;
 var sangapindi_fact=1.2;
 var sanagapappu_fact=1.2;
 var sambar_pow_fact=1.2;
-var potato_fact=1.2;
+
 var urad_fact=1.2;
 var urad_fact=1.2;
 
@@ -41,21 +204,69 @@ var urad_fact=1.2;
 function myFunction() {
   // Get the value of the input field with id="numb"
   let x = document.getElementById("count").value;
+  let y = document.getElementById("vcount").value;
+  let z = document.getElementById("dcount").value;
+  let a = document.getElementById("pcount").value;
+  let b = document.getElementById("ucount").value;
   // If x is Not a Number or less than one or greater than 10
  
-  if (isNaN(x)) {
-    ans = "Input not valid";
-  } else {
-    ans = Math.round(x * urad_fact) ;
-	ans1 = Math.round(x * irava_fact);
-	ans2 = Math.round(x * palukulu_fact)
+  if (isNaN(x) || isNaN(y) || isNaN(z) || isNaN(a) || isNaN(b)) {
+    ans = "Don't mess with Acharya. Check your input";
+    document.getElementById("error").innerHTML=ans;
   }
-  document.getElementById("mp").innerHTML = ans + "gm";
-  document.getElementById("mp1").style.display='block';
-  document.getElementById("mp3").innerHTML = ans1 + "gm";
-  document.getElementById("mp2").style.display='block';
-  document.getElementById("mp5").innerHTML = ans2 + "gm";
-  document.getElementById("mp4").style.display='block';
+  else
+  {
+  if(x!=0 ) {
+    ans = Math.round(x * idly_urad_fact) ;
+	ans1 = Math.round(x * idly_irava_fact);
+	ans2 = Math.round(x * idly_palukulu_fact);
+    document.getElementById("table1").style.display='inline';
+    var myTable = document.getElementById('table1');
+    myTable.rows[1].cells[1].innerHTML = ans + "gm";
+   myTable.rows[2].cells[1].innerHTML = ans1 + "gm";
+   myTable.rows[3].cells[1].innerHTML = ans2 + "gm";
+  }
+  if(y!=0 ) {
+    v_ans = Math.round(y * vada_urad_fact) ;
+    v_ans1 = Math.round(y * vada_rice_fact) ;
+	v_ans2 = Math.round(y * vada_palukulu_fact);
+    document.getElementById("table2").style.display='inline';
+    var vadaTable = document.getElementById('table2');
+    vadaTable.rows[1].cells[1].innerHTML = v_ans + " gm";
+   vadaTable.rows[2].cells[1].innerHTML = v_ans1 + " gm";
+   vadaTable.rows[3].cells[1].innerHTML = v_ans2 + " gm";
+  }
+   if(z!=0 ) {
+    d_ans = Math.round(z * dosa_urad_fact) ;
+    d_ans1 = Math.round(z * dosa_rice_fact) ;
+	d_ans2 = Math.round(z * dosa_palukulu_fact);
+    document.getElementById("table3").style.display='inline';
+    var vadaTable = document.getElementById('table3');
+    vadaTable.rows[1].cells[1].innerHTML = d_ans + " gm";
+   vadaTable.rows[2].cells[1].innerHTML = d_ans1 + " gm";
+   vadaTable.rows[3].cells[1].innerHTML = d_ans2 + " gm";
+  }
+
+if(a!=0 ) {
+    p_ans = Math.round(a * puri_aata_fact) ;
+    p_ans1 = Math.round(a * puri_maida_fact) ;
+	p_ans2 = Math.round(a * puri_potato_fact);
+    document.getElementById("table4").style.display='inline';
+    var vadaTable = document.getElementById('table4');
+    vadaTable.rows[1].cells[1].innerHTML = p_ans + " gm";
+   vadaTable.rows[2].cells[1].innerHTML = p_ans1 + " gm";
+   vadaTable.rows[3].cells[1].innerHTML = p_ans2 + " gm";
+  }
+
+if(b!=0 ) {
+    u_ans = Math.round(b * upma_upravva_fact) ;
+    document.getElementById("table5").style.display='inline';
+    var vadaTable = document.getElementById('table5');
+    vadaTable.rows[1].cells[1].innerHTML = u_ans + " gm";
+   
+  }
+}
+  
 }
 </script>
 
